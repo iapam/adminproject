@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: mediumseagreen">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">ADMIN DASHBOARD</a>
+        <h2>Number of unRecord: </h2>
+        <h2 th:text="${nura}"></h2>
+        <a href="/recordAgents/getUnrecodedAgent" class="btn btn-outline-primary"> See unrecord Agents</a>
+
+        <a href="/recordAgents/registrationPage" class="btn btn-outline-primary">Add User</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+  <div class="row">
+      <table class="table">
+          <thead>
+          <tr>
+              <th scope="col" style="font-size: 12px">ID</th>
+              <th scope="col" style="font-size: 12px">NAME</th>
+              <th scope="col" style="font-size: 12px">TOWN</th>
+              <th scope="col" style="font-size: 12px">NUMBER</th>
+              <th scope="col" style="font-size: 12px">POST</th>
+              <th scope="col" style="font-size: 12px">VOTES</th>
+              <th scope="col" style="font-size: 12px">VOTES</th>
+              <th scope="col" style="font-size: 12px">TOTAL NDC VOTES</th>
+              <th scope="col" style="font-size: 12px">TOTAL NPP VOTES</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr  th:each="record: ${recordAgent}"  style="font-size: 10px">
+              <td th:text="${record.getUserId}"  style="font-size: 11px"></td>
+              <td th:text="${record.getAgentname}"  style="font-size: 11px"></td>
+              <td th:text="${record.getAgenttown}"  style="font-size: 11px"></td>
+              <td th:text="${record.getNumber}"  style="font-size: 11px"></td>
+              <td th:text="${record.getAgentpost}"  style="font-size: 11px"></td>
+              <td th:text="${record.getNdcvotes}"  style="font-size: 11px"></td>
+              <td th:text="${record.getNppvotes}"  style="font-size: 11px"></td>
+              <td th:text="${record.getTotal_ndc_vote}"  style="font-size: 11px"></td>
+              <td th:text="${record.getTotal_npp_votes}"  style="font-size: 11px"></td>
+              <td><a th:href="@{'/recordAgents/deleteuser/'+${record.getUserId}}" class="btn btn-danger"  style="font-size: 8px">Delet User</a></td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

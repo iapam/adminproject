@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form style="margin-left: 100px" method="post" action="/save">
+            <div class="mb-3">
+                <label for="exampleInputEmail" class="form-label">Agent Id</label>
+                <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" style="width: 40%;" readonly th:value="${user}" name="userid">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Agent Name</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp" style="width: 40%;" name="agentName">
+            </div>
+            <div class="mb-3">
+                <label for="number" class="form-label">Agent Number</label>
+                <input type="text" class="form-control" id="number" aria-describedby="emailHelp" style="width: 40%;" name="agentNumber">
+            </div>
+            <div class="mb-3">
+                <label for="town" class="form-label">Agent Town</label>
+                <input type="text" class="form-control" id="town" aria-describedby="emailHelp" style="width: 40%;"name="agentTown" >
+            </div>
+            <div class="mb-3">
+                <label for="post" class="form-label">Agent Post</label>
+                <input type="text" class="form-control" id="post" aria-describedby="emailHelp" style="width: 40%;" name="agentPost">
+            </div>
+            <div class="mb-3">
+                <label for="ndc_votes" class="form-label">password</label>
+                <input type="text" class="form-control" id="ndc_votes" aria-describedby="emailHelp" style="width: 40%;" name="password" readonly th:value="${password}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
